@@ -1,5 +1,5 @@
 # flatpak-vcvrack
-A build script for making a [VCVRack](https://vcvrack.com/) flatpak.
+A build script for making a [VCV Rack](https://vcvrack.com/) flatpak.
 
 # Dependencies:
 - [flatpak](https://pkgs.org/download/flatpak)
