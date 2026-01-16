@@ -1,0 +1,26 @@
+id: com.vcvrack.Rack
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: rack
+finish-args:
+  - --device=dri
+  - --filesystem=home
+  - --share=network
+  - --socket=x11
+  - --socket=pulseaudio
+modules:
+  - name: rack
+    buildsystem: simple
+    build-commands:
+      - mkdir -p /app/
+      - cp -r Rack2Free/ /app/
+      - install -Dm755 rack.sh /app/bin/rack
+    sources:
+      - type: archive
+        url: https://vcvrack.com/downloads/RackFree-2.6.6-lin-x64.zip
+        sha256: 69acf0c98d47db381291a115d609dcfbb99887bd7bd8641f0489da063fb0fc6e
+        dest-filename: rack.zip
+        strip-components: 0
+      - type: file
+        path: rack.sh
